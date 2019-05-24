@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>Linear regression using Tensorflow.js</title>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css integrity=sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T crossorigin=anonymous>
+
+    <style>
+        .chartWithOverlay {
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 95px;
+            /* chartArea top  */
+            left: 95px;
+            /* chartArea left */
+        }
+
+        section {
+            margin: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class=container>
+
+        <section>
+            <h1>A simple linear regression example</h1>
+        </section>
+
+        <section>
+            <h4>Description</h4>
+            <p>
+                This examples demonstrates training of a simple regression model, using the tensorflow.js Core API. Under visualisation you can see the correct and the guessed graph. Also some datapoints the network is trained on. At the right you can see the loss function.
+            </p>
+            <p>The function we want to approximate is y = m * x + b</p>
+        </section>
+
+        <section>
+            <h4>Status</h4>
+            <div id=status>Loading data...</div>
+            <div id=message></div>
+        </section>
+
+        <section>
+            <h4>Visualisation</h4>
+
+            <div class=row>
+                <div class=col-sm-6>
+
+                    <div class=chartWithOverlay>
+
+                        <div id=chart_div></div>
+
+                        <canvas class=overlay width=309 height=309 id=overlay />
+
+                    </div>
+
+                </div>
+                <div class=col-sm-6 id=gradient_div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h4>Test Examples</h4>
+            <div class=row id=predictions></div>
+
+        </section>
+
+    </div>
+
+    <script src=index.js></script>
+
+</body>
+
+</html>
